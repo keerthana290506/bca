@@ -13,7 +13,7 @@ router.get('/',async(req,res)=>{
       .status(400)
       .json({ message: "User parameter cannot be empty" });
     }
-    const founduser = users.find((u)=>u.username===user)
+    const foundUser = users.find((u)=>u.username===user)
     if (foundUser) {
         return res.status(200).json({ message: "User found", data: foundUser });
       } else {
@@ -21,3 +21,5 @@ router.get('/',async(req,res)=>{
       }
 
 })
+
+module.exports = router
